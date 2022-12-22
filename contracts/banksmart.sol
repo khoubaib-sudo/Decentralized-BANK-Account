@@ -64,7 +64,6 @@ contract FundMe {
         return (minimumUSD*precision)/price;
     }
 
-    //modifier: https://medium.com/coinmonks/solidity-tutorial-all-about-modifiers-a86cf81c14cb
     modifier onlyOwner {
     	//is the message sender owner of the contract?
         require(msg.sender == owner);
@@ -76,12 +75,8 @@ contract FundMe {
     // if true, withdraw function will be executed 
     function withdraw() payable onlyOwner public {
     
-    	// If you are using version eight (v0.8) of chainlink aggregator interface,
-	// you will need to change the code below to
-	// payable(msg.sender).transfer(address(this).balance);
         msg.sender.transfer(address(this).balance);
 
-        
         //iterate through all the mappings and make them 0
         //since all the deposited amount has been withdrawn
         for (uint256 funderIndex=0; funderIndex < funders.length; funderIndex++){
