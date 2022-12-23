@@ -2,6 +2,10 @@
 
 // Smart contract that lets anyone deposit ETH into the contract
 // Only the owner of the contract can withdraw the ETH
+
+
+//keeping in mind of course that I have +1.5 in the project thank you in advance
+
 pragma solidity ^0.6.6;
 
 // Get the latest ETH/USD price from chainlink price feed
